@@ -13,4 +13,7 @@ RUN bash ./installODBCDrivers.sh \
     && apt-get remove --purge -y $BUILD_PACKAGES && apt-get clean autoclean && apt-get autoremove --yes && rm -rf /var/lib/apt/lists/*
 COPY src/ .
 
+# RUN python -m pip install pymongo<4
+
+
 CMD [ "python", "./server.py" ]
